@@ -22,3 +22,7 @@ jobs:
       run: cargo test --verbose
     - name: Run
       run: cargo run
+    - uses: actions/upload-artifact@v1
+      with:
+        name: hello-rust-${{ github.sha }}
+        path: target/debug/hello-rust
